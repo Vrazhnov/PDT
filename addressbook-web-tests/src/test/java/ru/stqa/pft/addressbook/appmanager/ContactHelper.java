@@ -58,7 +58,7 @@ public class ContactHelper extends HelperBase {
         click(By.name("update"));
     }
 
-    public void createContact(ContactData contact) {
+    public void createContact(ContactData contact, boolean creation) {
         initContactCreation();
         fillContactForm(contact, true);
         submitContactCreation();
@@ -67,5 +67,9 @@ public class ContactHelper extends HelperBase {
 
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
+    }
+
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
     }
 }
