@@ -20,13 +20,13 @@ public class GroupData {
         return this;
     }
 
-    public GroupData withFooter(String footer) {
-        this.footer = footer;
+    public GroupData withHeader(String header) {
+        this.header = header;
         return this;
     }
 
-    public GroupData withHeader(String header) {
-        this.header = header;
+    public GroupData withFooter(String footer) {
+        this.footer = footer;
         return this;
     }
 
@@ -34,12 +34,12 @@ public class GroupData {
         return name;
     }
 
-    public String getFooter() {
-        return footer;
-    }
-
     public String getHeader() {
         return header;
+    }
+
+    public String getFooter() {
+        return footer;
     }
 
     @Override
@@ -57,12 +57,15 @@ public class GroupData {
 
         GroupData groupData = (GroupData) o;
 
+        if (id != groupData.id) return false;
         return name != null ? name.equals(groupData.name) : groupData.name == null;
     }
 
     @Override
     public int hashCode() {
-        return name != null ? name.hashCode() : 0;
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
 
 }
