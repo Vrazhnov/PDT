@@ -31,4 +31,25 @@ public class ContactPhoneTests extends TestBase {
         return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
     }
 
+
+    @Test
+    public void testContactAddress() {
+        app.goTo().contactPage();
+        ContactData contact = app.contact().all().iterator().next();
+        ContactData contactInfoFromEditForm = app.contact().InfoFromEditForm(contact);
+
+        assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
+    }
+
+    @Test
+    public void testContactEmails() {
+        app.goTo().contactPage();
+        ContactData contact = app.contact().all().iterator().next();
+        ContactData contactInfoFromEditForm = app.contact().InfoFromEditForm(contact);
+
+            assertThat(contact.getEmail(), equalTo(contactInfoFromEditForm.getEmail()));
+            assertThat(contact.getEmail2(), equalTo(contactInfoFromEditForm.getEmail2()));
+            assertThat(contact.getEmail3(), equalTo(contactInfoFromEditForm.getEmail3()));
+    }
+
 }
