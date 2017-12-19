@@ -109,11 +109,11 @@ public class ContactHelper extends HelperBase {
             String firstname = cells.get(2).getText();
             String lastname = cells.get(1).getText();
             String address = cells.get(3).getText();
-            String[] emails = cells.get(4).getText().split("\n");
+            String allEmails = cells.get(4).getText();
             String allPhones = cells.get(5).getText();
             contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname).withAddress(address)
                     .withAllPhones(allPhones)
-            .withEmail(emails[0]).withEmail2(emails[1]).withEmail3(emails[2]).withGroup("test1"));
+                    .withAllEmails(allEmails).withGroup("test1"));
         }
         return new Contacts(contactCache);
     }
