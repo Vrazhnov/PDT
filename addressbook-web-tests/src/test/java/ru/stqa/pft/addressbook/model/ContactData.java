@@ -23,7 +23,8 @@ public class ContactData {
     @Column(name = "lastname")
     private String lastname;
 
-    @Column(name = "id")
+    @Column(name = "address")
+    @Type(type = "text")
     private String address;
 
     @Column(name = "email")
