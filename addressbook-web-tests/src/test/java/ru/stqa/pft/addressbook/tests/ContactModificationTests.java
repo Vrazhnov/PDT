@@ -25,11 +25,12 @@ public class ContactModificationTests extends TestBase {
     public void testContactModification() {
         Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
+//        app.contact().initContactModificationById(modifiedContact.getId());
         ContactData contact = new ContactData()
                 .withId(modifiedContact.getId()).withFirstname("name").withLastname("lastname")
                 .withAddress("SPb").withHomePhone("1111").withMobilePhone("2222")
                 .withWorkPhone("3333").withEmail("email").withEmail2("email2").withEmail3("email3");
-//        app.goTo().contactPage();
+        app.goTo().contactPage();
         app.contact().modify(contact);
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contacts();
