@@ -6,8 +6,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.HttpSessionId;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -23,6 +21,7 @@ public class ApplicationManager {
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
+    private ResetPasswordHelper resetPasswordHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -90,5 +89,12 @@ public class ApplicationManager {
             jamesHelper = new JamesHelper(this);
         }
         return jamesHelper;
+    }
+
+    public ResetPasswordHelper reset() {
+        if (resetPasswordHelper == null) {
+            resetPasswordHelper = new ResetPasswordHelper(this);
+        }
+        return resetPasswordHelper;
     }
 }
