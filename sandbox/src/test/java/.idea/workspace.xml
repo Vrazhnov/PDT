@@ -59,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestAssuredTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RestAssuredTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../../rest-sample/src/test/java/ru/stqa/pft/rest/RestAssuredTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -68,6 +68,26 @@
                 <element signature="e#607#608#0" expanded="true" />
                 <element signature="e#709#710#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mantis-tests.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mantis-tests_main.iml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests_main.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1245,11 +1265,11 @@
         <option value="$PROJECT_DIR$/../../../../mantis-tests/src/test/java/ru/stqa/pft/mantis/tests/SoapTests.java" />
         <option value="$PROJECT_DIR$/../../../../mantis-tests/src/test/resources/local.properties" />
         <option value="$PROJECT_DIR$/../../../../mantis-tests/src/test/java/ru/stqa/pft/mantis/appmanager/SoapHelper.java" />
-        <option value="$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests_main.iml" />
         <option value="$PROJECT_DIR$/../../../../rest-sample/src/test/java/ru/stqa/pft/rest/Issue.java" />
         <option value="$PROJECT_DIR$/../../../../rest-sample/src/test/java/ru/stqa/pft/rest/RestTests.java" />
         <option value="$PROJECT_DIR$/../../../../rest-sample/build.gradle" />
         <option value="$PROJECT_DIR$/../../../../rest-sample/src/test/java/ru/stqa/pft/rest/RestAssuredTests.java" />
+        <option value="$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests_main.iml" />
       </list>
     </option>
   </component>
@@ -1303,6 +1323,17 @@
             <path>
               <item name="java" type="b2602c69:ProjectViewProjectNode" />
               <item name="mantis-tests" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mantis-tests" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mantis-tests" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java" type="b2602c69:ProjectViewProjectNode" />
@@ -2124,26 +2155,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../mantis-tests/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests_main.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -2191,6 +2206,22 @@
             <element signature="e#607#608#0" expanded="true" />
             <element signature="e#709#710#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../mantis-tests/.idea/modules/mantis-tests_main.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
