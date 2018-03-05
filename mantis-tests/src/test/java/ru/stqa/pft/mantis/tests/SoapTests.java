@@ -7,7 +7,6 @@ import javax.xml.rpc.ServiceException;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 import java.util.Set;
-
 import static org.testng.Assert.assertEquals;
 
 public class SoapTests extends TestBase {
