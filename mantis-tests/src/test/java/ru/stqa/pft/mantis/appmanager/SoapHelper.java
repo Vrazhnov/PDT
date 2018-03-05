@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class SoapHelper {
 
-    private ApplicationManager app;
+    private static ApplicationManager app;
 
     public SoapHelper(ApplicationManager app) {
         this.app = app;
@@ -29,9 +29,9 @@ public class SoapHelper {
                 .collect(Collectors.toSet());
     }
 
-    private MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException {
+    public static MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException {
         return new MantisConnectLocator()
-                    .getMantisConnectPort(new URL("http://localhost/mantisbt-1.2.19/api/soap/mantisconnect.php"));
+                    .getMantisConnectPort(new URL(app.getProperty("mantis.baseUrl")));
     }
 
     public Issue addIssue(Issue issue) throws MalformedURLException, ServiceException, RemoteException {
@@ -41,12 +41,17 @@ public class SoapHelper {
         issueData.setSummary(issue.getSummary());
         issueData.setDescription(issue.getDescription());
         issueData.setProject(new ObjectRef(BigInteger.valueOf(issue.getProject().getId()), issue.getProject().getName()));
-        BigInteger issueId = mc.mc_issue_add("administrator", "root", issueData);
         issueData.setCategory(categories[0]);
+        BigInteger issueId = mc.mc_issue_add("administrator", "root", issueData);
         IssueData createdIssueData = mc.mc_issue_get("administrator", "root", issueId);
         return new Issue().withId(createdIssueData.getId().intValue())
                 .withSummary(createdIssueData.getSummary()).withDescription(createdIssueData.getDescription())
                 .withProject(new Project().withId(createdIssueData.getProject().getId().intValue())
                 .withName(createdIssueData.getProject().getName()));
+    }
+
+    public String getStatus(int issueId) throws RemoteException, MalformedURLException, ServiceException {
+        MantisConnectPortType mc = getMantisConnect();
+        return mc.mc_issue_get("administrator", "root", BigInteger.valueOf(issueId)).getStatus().getName();
     }
 }
