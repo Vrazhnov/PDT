@@ -29,19 +29,21 @@ public class ContactCreationTests extends TestBase {
             XStream xstream = new XStream();
             xstream.processAnnotations(ContactData.class);
             List<ContactData> contacts = (List<ContactData>) xstream.fromXML(xml);
-            return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
+            return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
         }
     }
 
     @Test(dataProvider = "validContacts")
     public void testContactCreation(ContactData contact) {
+        Contacts before = app.db().contacts();
         app.goTo().contactPage();
-        Contacts before = app.contact().all();
+//        Contacts before = app.contact().all();
         app.contact().create(contact, true);
+//        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(app.contact().count(), equalTo(before.size() + 1));
-        Contacts after = app.contact().all();
         assertThat(after, equalTo(
-                before.withAdded(contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
+                before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
     }
 }
 
