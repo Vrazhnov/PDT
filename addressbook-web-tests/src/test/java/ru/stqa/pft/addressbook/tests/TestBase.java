@@ -1,53 +1,46 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.openqa.selenium.remote.BrowserType;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import java.io.FileReader;
+import java.util.Properties;
+import java.util.logging.Logger;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
-import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.Contacts;
-import ru.stqa.pft.addressbook.model.GroupData;
-import ru.stqa.pft.addressbook.model.Groups;
-
-import java.util.stream.Collectors;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 public class TestBase {
 
-    protected static final ApplicationManager app
-            = new ApplicationManager(System.getProperty("browser", BrowserType.CHROME));
+    protected ApplicationManager app;
+    protected Logger log = Logger.getLogger("TEST");
 
-    @BeforeSuite
-    public void setUp() throws Exception {
-        app.init();
-    }
-
-    @AfterSuite
-    public void tearDown() {
-        app.stop();
-    }
-
-
-    public void verifyGroupListInUI() {
-        if (Boolean.getBoolean("verifyUI")) {
-            Groups dbGroups = app.db().groups();
-            Groups uiGroups = app.group().all();
-            assertThat(uiGroups, equalTo(dbGroups.stream()
-                    .map((g) -> new GroupData().withId(g.getId()).withName(g.getName()))
-                    .collect(Collectors.toSet())));
+    @BeforeTest
+    @Parameters({"configFile"})
+    public void setUp(@Optional String configFile) throws Exception {
+        if (configFile == null){
+            configFile = System.getProperty("configFile");
         }
-    }
-
-    public void verifyContactListInUI() {
-        if (Boolean.getBoolean("verifyUI")) {
-            Contacts dbContacts = app.db().contacts();
-            Contacts uiContacts = app.contact().all();
-            assertThat(uiContacts, equalTo(dbContacts.stream()
-                    .map((c) -> new ContactData().withId(c.getId()).withFirstname(c.getFirstname()).withLastname(c.getLastname()))
-                    .collect(Collectors.toSet())));
+        if (configFile == null){
+            configFile = System.getenv("configFile");
         }
+        if (configFile == null){
+            configFile = "application.properties";
+        }
+        Properties props = new Properties();
+        props.load(new FileReader(configFile));
+        log.info("SetUp start");
+        app = ApplicationManager.getInstance(props);
+        log.info("SetUp end");
+        app = new ApplicationManager();
     }
 
+/*    @AfterTest
+    public void tearDown() throws Exception {
+        log.info("tearDown start");
+        ApplicationManager.getInstance(null).stop();
+        log.info("tearDown end");
+    }
+*/
 }

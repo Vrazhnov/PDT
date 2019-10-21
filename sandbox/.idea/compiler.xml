@@ -2,8 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="addressbook-new-web-tests_main" target="1.8" />
+      <module name="addressbook-new-web-tests_test" target="1.8" />
       <module name="addressbook-web-tests_main" target="1.8" />
       <module name="addressbook-web-tests_test" target="1.8" />
+      <module name="aet-web-tests_main" target="1.8" />
+      <module name="aet-web-tests_test" target="1.8" />
       <module name="sandbox_main" target="1.8" />
       <module name="sandbox_test" target="1.8" />
     </bytecodeTargetLevel>

@@ -5,10 +5,34 @@
       <GradleProjectSettings>
         <option name="createEmptyContentRootDirectories" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-new-web-tests" />
+        <option name="gradleHome" value="C:/Tools/gradle-4.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../addressbook-new-web-tests" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../addressbook-web-tests" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../aet-web-tests" />
+        <option name="gradleHome" value="C:/Tools/gradle-4.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../aet-web-tests" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />

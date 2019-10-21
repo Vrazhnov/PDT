@@ -12,6 +12,8 @@ dependencies {
     compile 'com.thoughtworks.xstream:xstream:1.4.10'
     compile 'mysql:mysql-connector-java:8.0.9-rc'
     compile 'org.hibernate:hibernate-core:5.1.12.Final'
+    compile 'com.hynnet:jacob:1.15'
+    compile 'de.openkeyword:autoit:0.1.13'
 }
 
 task testGroups(type: Test) {
